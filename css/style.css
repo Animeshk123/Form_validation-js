@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --fontFamily: 'Ubuntu', sans-serif;
+    --fontFamilyTwo: 'Roboto Slab', serif;
+    --font-color: #46c3db;
+    --theme-color: #2d6cdf;
+    --error-color: #ff304f;
+    --success-color: limegreen;
+}
+
+body {
+    width: 100vw;
+    height: 140vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url("https://source.unsplash.com/random");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.7;
+
+}
+
+html {
+    font-size: 60%;
+}
+
+.container {
+    width: auto;
+    height: auto;
+}
+
+.main__form {
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem 3rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.3);
+    transition: 0.4s all ease;
+}
+
+.form__items {
+    width: 100%;
+    height: auto;
+    padding: 0.7rem 0;
+    position: relative;
+}
+
+.form__items label {
+    display: block;
+    font-family: var(--fontFamilyTwo);
+    font-size: 1.7rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bolder;
+    margin: 0.2rem 0;
+}
+
+.form__items input {
+    display: block;
+    padding: 1.1rem 2rem;
+    border: none;
+    outline: none;
+    border: 0.2rem solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.3rem;
+    font-family: var(--fontFamily);
+    font-weight: bold;
+    text-transform: capitalize;
+    caret-color: black;
+    -webkit-caret-color: black;
+    -ms-caret-color: black;
+    -o-caret-color: black;
+    transition: all 0.4s ease;
+}
+
+.form__items input:focus {
+    border: 0.3rem solid black;
+}
+
+.form__items input::placeholder {
+    font-family: var(--fontFamilyTwo);
+    color: rgba(0, 0, 0, 0.4);
+    text-transform: capitalize;
+}
+
+span {
+    font-family: var(--fontFamily);
+    margin: 0.1rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.form__items i {
+    position: absolute;
+    right: 12px;
+    bottom: 34px;
+    font-size: 1.5rem;
+    visibility: hidden;
+}
+.last{
+    bottom: 32px!important;
+}
+/* class es that will be added by javascript with dynamicly */
+
+.form__items.success input {
+    border: 0.2rem solid var(--success-color) !important;
+}
+
+.form__items.error input {
+    border: 0.2rem solid var(--error-color) !important;
+    color: var(--error-color) !important;
+}
+
+.form__items.success i.fa-check-circle {
+    color: var(--success-color) !important;
+    visibility: visible !important;
+}
+
+.form__items.error i.fa-exclamation-circle {
+    color: var(--error-color) !important;
+    visibility: visible !important;
+}
+
+.form__items.error span {
+    color: var(--error-color) !important;
+    visibility: visible !important;
+}
+
+
+#submit {
+    border: none;
+    outline: none;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin: 1.1rem 0;
+    padding: 1.1rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background-color: var(--theme-color);
+    color: white;
+    font-family: var(--fontFamily);
+    text-transform: capitalize;
+    font-weight: bold;
+}
